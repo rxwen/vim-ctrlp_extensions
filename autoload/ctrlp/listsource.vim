@@ -30,8 +30,14 @@ endfunction
 " Return: a Vim's List
 "
 function! ctrlp#listsource#init()
-  "let l:output = system("git ls-files")
-  let l:output = system("global -P")
+  "let l:output = system("cscope -L -7 filename")
+  if file_readable("GTAGS")
+    let l:output = system("global -P")
+  elseif file_readable("cscope.files")
+    let l:output = system("cat cscope.files")
+  elseif isdirectory(".git")
+    let l:output = system("git ls-files")
+  endif
   return split(l:output, '\n')
 endfunction
 
