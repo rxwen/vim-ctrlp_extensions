@@ -1,11 +1,15 @@
-# CtrlP listsource
+# CtrlP Extensions
 
-CtrlP extension for listing source files for a project. It's useful to get
+A collections of CtrlP exensions
+
+* listsource: for listing source files for a project. It's useful to get
 a clean list that only contains source files of a project
+* cmdhistory: for quick access to vim command history
 
-A vim command is created by this plugin:
+Below vim commands are created by this plugin:
 
 * `CtrlPListSource` - list source files
+* `CtrlPCmdHistory` - list recent vim commands
 
 ## Prerequisites
 
@@ -13,8 +17,8 @@ A vim command is created by this plugin:
 2. Current directory should contains one of (The order matters, if a 
 preceeding condition is satisfied, latters won't be checked):
 - GTAGS (gnu global database file)
-- tags file (ctags database file)
 - .git
+- cscope.files (a text file contains all source files)
 
 
 ## Installation
@@ -24,6 +28,7 @@ preceeding condition is satisfied, latters won't be checked):
 
     ```
     nnoremap \fs :CtrlPListSource<CR>
+    nnoremap \fh :CtrlPCmdHistory<CR>
     ```
 
 
