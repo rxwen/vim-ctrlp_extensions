@@ -45,7 +45,13 @@ endfunction
 "
 function! ctrlp#cmdhistory#accept(mode, str)
   cal ctrlp#exit()
-  execute ':'.a:str
+  " if mode is 'v', copy current selection to command prompt and wait for user
+  " to confirm and execute
+  if a:mode == 'v'
+      call feedkeys(':'.a:str)
+  else
+      execute ':'.a:str
+  endif
 endfunction
 
 " (optional) Do something before enterting ctrlp
