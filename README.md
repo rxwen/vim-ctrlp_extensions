@@ -16,6 +16,7 @@ Below vim commands are created by this plugin:
 1. [CtrlP][1] must be installed
 2. Current directory should contains one of (The order matters, if a 
 preceeding condition is satisfied, latters won't be checked):
+
 - GTAGS (gnu global database file)
 - .git
 - cscope.files (a text file contains all source files)
