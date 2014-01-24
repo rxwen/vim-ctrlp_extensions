@@ -31,7 +31,7 @@ endfunction
 "
 function! ctrlp#cmdhistory#init()
   let type = 'cmd'
-  let entries = map(range(histnr(type)), 'histget(type, v:val)')
+  let entries = map(range(histnr(type), 0, -1), 'histget(type, v:val)')
   let list = filter(entries, '!empty(v:val)')
   return list
 endfunction
