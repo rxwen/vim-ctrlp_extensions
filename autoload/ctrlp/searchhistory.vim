@@ -48,9 +48,9 @@ function! ctrlp#searchhistory#accept(mode, str)
   " if mode is 'v', copy current selection to command prompt and wait for user
   " to confirm and execute
   if a:mode == 'v'
-      call feedkeys(':'.a:str)
+      call feedkeys('/'.a:str)
   else
-      execute '/'.a:str
+      call feedkeys('/'.a:str."\<CR>")
   endif
 endfunction
 
